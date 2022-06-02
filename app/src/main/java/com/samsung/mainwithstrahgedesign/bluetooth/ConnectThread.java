@@ -38,7 +38,6 @@ public class ConnectThread extends Thread {
             mSocket.connect();
             Log.d("MyLog", "Connected");
             SaveToPrefMap.connect=true;
-//            Toast.makeText(context, "Connected", Toast.LENGTH_SHORT).show();
             rthread=new ReceiveThread(context,mSocket);
             rthread.start();
         } catch (IOException e) {

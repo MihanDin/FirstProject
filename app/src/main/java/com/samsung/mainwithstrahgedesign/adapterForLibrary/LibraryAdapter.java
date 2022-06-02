@@ -27,7 +27,6 @@ public class LibraryAdapter  extends RecyclerView.Adapter<LibraryAdapter.MyHolde
     private final List<Library> listLib;
     private SharedPreferences pref;
 
-//    public Map<Integer,Boolean>  mapa = new HashMap<Integer,Boolean>();
 
 
     public LibraryAdapter(Context context, List<Library> listLib) {
@@ -78,8 +77,6 @@ public class LibraryAdapter  extends RecyclerView.Adapter<LibraryAdapter.MyHolde
        });
     }
 
-    //                Log.d("Siii",String.valueOf(Boolean.getBoolean(String.valueOf(mapa.get(position)))));
-//                mapa.put(position,!Boolean.getBoolean(String.valueOf(mapa.get(position))));
     @Override
     public int getItemCount() {
         return listLib.size();

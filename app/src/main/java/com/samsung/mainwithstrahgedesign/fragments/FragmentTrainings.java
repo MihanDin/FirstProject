@@ -45,17 +45,9 @@ public class FragmentTrainings extends Fragment {
         View view = inflater.inflate(R.layout.fragment_trainings, null, false);
         List<Jump> lstJump= new ArrayList<>();
         prfs = getContext().getSharedPreferences(BtConsts.JUMP_KEY, Context.MODE_PRIVATE);
-//        String Astatus = prfs.getString(BtConsts.ID_KEY, "");
-//        Log.d("MyLogi",Astatus);
-//        lstJump.add(new Jump(1));
-//        lstJump.add(new Jump(2));
-//        lstJump.add(new Jump(3));
-//        lstJump.add(new Jump(4));
-        Log.d("MyTag", String.valueOf(SaveToPrefMap.ID));
         for (int i = 1; i < Obrabotchik.razdelJump(myDbManager.getFromDb((SaveToPrefMap.ID)+1)).size()+1; i++) {
             lstJump.add(new Jump(i));
         }
-//        lstJump=Obrabotchik.razdelJump(myDbManager.getFromDb((SaveToPrefMap.ID)));
         myRecycle =view.findViewById(R.id.recycleViewJumps);
         jumpAdapter= new JumpAdapter(getContext(),lstJump);
         myRecycle.setAdapter(jumpAdapter);
@@ -70,18 +62,13 @@ public class FragmentTrainings extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-//        inflater.inflate(R.menu.main_menu,menu);
         menu.findItem(R.id.id_okey).setVisible(true);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        if(item.getItemId()==R.id.id_okey){
-//            getActivity().getSupportFragmentManager().beginTransaction()
-//                    .replace(R.id.counteiner, new LeftFragment()).commit();
-//
-//        }
+
         if(item.getItemId()==R.id.id_okey){
             if(SaveToPrefMap.countJumpi()==0){
                 Toast.makeText(getContext(), "Choose one Jump", Toast.LENGTH_SHORT).show();
@@ -96,10 +83,8 @@ public class FragmentTrainings extends Fragment {
                     }
                 }
                 SharedPreferences.Editor edit= prfs.edit();
-                Log.d("Textik",String.valueOf(Obrabotchik.razdelJump(myDbManager.getFromDb((SaveToPrefMap.ID)+1)).get(find)));
                 edit.putInt(MyConstants.JUMP_NUMBER,Obrabotchik.razdelJump(myDbManager.getFromDb((SaveToPrefMap.ID)+1)).get(find));
                 edit.apply();
-                Log.d("TEXTdeb",String.valueOf(prfs.getInt(MyConstants.JUMP_NUMBER,71)));
                 for (int i = 0; i < SaveToPrefMap.jumpi.length;i++) {
                     jumpi[i]=false;
                 }

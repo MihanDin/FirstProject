@@ -23,14 +23,11 @@ public class MyDbManager {
         this.context = context;
         myDbHelper= new MyDbHelper(context);
         prfs = context.getSharedPreferences(BtConsts.COUNT, Context.MODE_PRIVATE);
-//        pref = context.getSharedPreferences(BtConsts.COUNT, Context.MODE_PRIVATE);
 
     }
     public void removeAll()
     {
-        // db.delete(String tableName, String whereClause, String[] whereArgs);
-        // If whereClause is null, it will delete all rows.
-        SQLiteDatabase db = myDbHelper.getWritableDatabase(); // helper is object extends SQLiteOpenHelper
+        SQLiteDatabase db = myDbHelper.getWritableDatabase();
         db.delete(MyConstants.TABLE_NAME, null, null);
 }
     public void openDb(){
@@ -64,10 +61,6 @@ public class MyDbManager {
             } while (c.moveToNext());
                 c.close();
         }
-//        String tempLis= new String();
-//        Cursor cursor = db.query(MyConstants.TABLE_NAME, new String[]{"MyConstants.TITLE"},"MyConstants._ID = "+id,null,null,null,null,null);
-//                String tittle = cursor.getString(cursor.getColumnIndexOrThrow(MyConstants.TITLE));
-//            cursor.close();
         return title_name;
         }
         public  void closeDb(){

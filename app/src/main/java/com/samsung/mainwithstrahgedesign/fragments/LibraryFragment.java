@@ -59,12 +59,7 @@ public class LibraryFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_library, container, false);
         List<Library> lstLib = new ArrayList<>();
-//        File f = getContext().getDatabasePath(MyConstants.DB_NAME);
-//        Log.d("MyCheck",String.valueOf(f.length()));
         myDbManager= new MyDbManager(getContext());
-//        DatabaseUtils.queryNumEntries(myDbManager,MyConstants.TABLE_NAME,null);
-                Log.d("MyCheck",String.valueOf(pref.getInt(MyConstants.COUNT_NUMBER,1)));
-
         for (int i = 0; i < pref.getInt(MyConstants.COUNT_NUMBER,1)-71; i++) {
             lstLib.add(new Library(i));
         }
@@ -76,7 +71,6 @@ public class LibraryFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-//        inflater.inflate(R.menu.main_menu,menu);
         menu.findItem(R.id.id_okey).setVisible(true);
         super.onCreateOptionsMenu(menu, inflater);
     }
@@ -101,15 +95,11 @@ public class LibraryFragment extends Fragment {
                     si[i]=false;
                 }
                 SaveToPrefMap.ID=find;
-//                SharedPreferences.Editor editor = pref.edit();
-//                editor.putString(BtConsts.JUMP_KEY, String.valueOf(find));
-//                Log.d("mySii",pref.getString(BtConsts.ID_KEY, ""));
-//                editor.apply();
+
             } else {
                 Toast.makeText(getContext(), "Choose ONLY one training ", Toast.LENGTH_SHORT).show();
             }
-//            getActivity().getSupportFragmentManager().beginTransaction()
-//                       .replace(R.id.counteiner, new FragmentTrainings()).commit();
+
         }
         return super.onOptionsItemSelected(item);
     }

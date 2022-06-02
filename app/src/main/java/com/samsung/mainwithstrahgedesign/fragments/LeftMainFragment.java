@@ -33,7 +33,6 @@ public class LeftMainFragment extends Fragment {
         right= view.findViewById(R.id.weightbtn);
         pref = getContext().getSharedPreferences(BtConsts.JUMP_KEY, Context.MODE_PRIVATE);
         TextView left_main_tv=view.findViewById(R.id.left_main_tv);
-
         String formattedDouble = String.format("%.1f", Math.sqrt(pref.getInt(MyConstants.JUMP_NUMBER,71)*0.01*2*10));
         left_main_tv.setText(" Начальная скорость: "+"\n "+formattedDouble+"м/с");
         left.setOnClickListener(new View.OnClickListener() {

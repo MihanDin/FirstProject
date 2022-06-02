@@ -25,9 +25,6 @@ public class JumpAdapter  extends RecyclerView.Adapter<JumpAdapter.MyHolder> {
     private final List<Jump> listJump;
     private SharedPreferences pref;
 
-//    public Map<Integer,Boolean>  mapa = new HashMap<Integer,Boolean>();
-
-
     public JumpAdapter(Context context, List<Jump> listJump) {
         this.context = context;
         this.inflater = LayoutInflater.from(context);

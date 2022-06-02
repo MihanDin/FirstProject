@@ -62,7 +62,6 @@ public class BtAdapter extends ArrayAdapter<ListItem> {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         viewHolder.tvBtName.setText(mainList.get(position).getBtDevice().getName());
-//        viewHolder.chBtSelected.setChecked(false);
         viewHolder.chBtSelected.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

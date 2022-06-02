@@ -89,21 +89,6 @@ public class MainActivity extends AppCompatActivity {
         }else if (item.getItemId() == R.id.id_connect) {
             btConnection.connect();
 
-//        }else if (item.getItemId() == R.id.action_settings) {
-//
-//            setTitle(R.string.action_settings);
-//            SettingsFragment settingsFragment = new SettingsFragment();
-//            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-//            ft.replace(R.id.counteiner, settingsFragment);
-//            ft.commit();
-//
-//        }else if (item.getItemId() == R.id.action_account) {
-//
-//            setTitle(R.string.action_account);
-//            AccountFragment accountFragment = new AccountFragment();
-//            FragmentTransaction ft2 = getSupportFragmentManager().beginTransaction();
-//            ft2.replace(R.id.counteiner, accountFragment);
-//            ft2.commit();
         }else if (item.getItemId() ==R.id.action_library) {
 
             setTitle(R.string.action_library);
@@ -149,7 +134,6 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == Enable_Request) {
             if (requestCode == RESULT_OK) {
-                //здесь пишется код,если бт включен
                 setBtIcon();
             }
         }

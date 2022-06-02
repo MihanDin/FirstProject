@@ -21,7 +21,6 @@ import com.samsung.mainwithstrahgedesign.db.MyConstants;
 
 public class LeftFragment extends Fragment {
 private ImageFilterButton left_main,right,right_main;
-//private TextView left_tv;
 private SharedPreferences pref;
 
 
@@ -36,11 +35,7 @@ private SharedPreferences pref;
         right= view.findViewById(R.id.weightbtn);
         TextView left_tv=view.findViewById(R.id.left_tv);
         pref = getContext().getSharedPreferences(BtConsts.JUMP_KEY, Context.MODE_PRIVATE);
-
-        Log.d("TEXTdeb",String.valueOf(pref.getInt(MyConstants.JUMP_NUMBER,71)));
-
         left_tv.setText("Высота прыжка: "+"\n "+String.valueOf(pref.getInt(MyConstants.JUMP_NUMBER,71))+" см");
-//        left_tv.setText(String.valueOf(pref.getInt("NUMBER_JUMP",0)));
         left_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
