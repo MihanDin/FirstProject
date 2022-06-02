@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/pink_main"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="16"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:layout_weight="3">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textStyle="normal"
+                    android:textColor="@color/black"
+                    android:text="Скорость"
+                    android:gravity="center"
+                    android:textSize="30sp"
+                    android:background="@drawable/oval_button"
+                    android:layout_marginLeft="55sp"
+                    android:layout_marginRight="55sp"
+                    android:layout_marginTop="40sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:layout_weight="19.5"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textStyle="normal"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal"
+                    android:id="@+id/left_main_tv"
+                    android:textColor="@color/black"
+                    android:background="@drawable/oval_button"
+                    android:layout_margin="50sp"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="2">
+
+            <androidx.constraintlayout.utils.widget.ImageFilterButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@color/pink_under"
+                android:src="@drawable/ic_ruler__1__1"
+                android:id="@+id/rulerbtn"
+                android:layout_weight="1"
+                />
+            <androidx.constraintlayout.utils.widget.ImageFilterButton
+                android:src="@drawable/ic_running_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/runnerbtn"
+                android:background="@color/pink_under"/>
+            <androidx.constraintlayout.utils.widget.ImageFilterButton
+                android:src="@drawable/ic_lighting__4_"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/energybtn"
+                android:background="@color/pink_under"/>
+            <androidx.constraintlayout.utils.widget.ImageFilterButton
+                android:src="@drawable/ic_weight__1_"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/weightbtn"
+                android:background="@color/pink_under"/>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
+
+
+
+
+
+
