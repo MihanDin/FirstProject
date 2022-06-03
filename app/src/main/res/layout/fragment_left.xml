@@ -40,14 +40,33 @@
                 >
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:textStyle="normal"
                     android:textSize="30sp"
                     android:gravity="center_horizontal"
                     android:id="@+id/left_tv"
                     android:textColor="@color/black"
                     android:background="@drawable/oval_button"
-                    android:layout_margin="50sp"/>
+                    android:layout_marginTop="50sp"
+                    android:layout_marginLeft="50sp"
+                    android:layout_marginRight="50sp"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    android:layout_margin="50sp"
+                    android:background="@drawable/oval_button"
+                    android:id="@+id/layout1"
+                    android:orientation="vertical"
+                    >
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/barCharLeft"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 

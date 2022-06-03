@@ -10,5 +10,6 @@ public class BtConsts {
     public static final String MAC_KEY = "mak_key";
     public static final String ID_KEY = "id_key";
     public static final String JUMP_KEY = "jump_key";
+    public static final String NUMBER_OF_TRAINING = "number";
     public static final String COUNT= "count_key";
 }

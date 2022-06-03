@@ -7,7 +7,9 @@ public class MyConstants {
     public static final String DB_NAME="High_db.db";
     public static final int DB_VERSION=1;
     public static final String JUMP_NUMBER ="NUMBER_JUMP";
+    public static final String Training_NUMBER ="NUMBER_Train";
     public static final String COUNT_NUMBER ="NUMBER_COUNT";
+
     public static final String TABLE_STRUCTURE =
             "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " ( " +
                     _ID + " INTEGER PRIMARY KEY , " +

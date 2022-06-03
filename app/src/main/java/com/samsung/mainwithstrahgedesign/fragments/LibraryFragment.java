@@ -44,11 +44,13 @@ public class LibraryFragment extends Fragment {
     private MyDbManager myDbManager;
     private SQLiteDatabase database;
     private SharedPreferences pref;
+    private SharedPreferences prfs;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         pref = getContext().getSharedPreferences(BtConsts.COUNT, Context.MODE_PRIVATE);
+        prfs = getContext().getSharedPreferences(BtConsts.NUMBER_OF_TRAINING, Context.MODE_PRIVATE);
         setHasOptionsMenu(true);
     }
 
@@ -59,8 +61,8 @@ public class LibraryFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_library, container, false);
         List<Library> lstLib = new ArrayList<>();
-        myDbManager= new MyDbManager(getContext());
-        for (int i = 0; i < pref.getInt(MyConstants.COUNT_NUMBER,1)-71; i++) {
+        myDbManager = new MyDbManager(getContext());
+        for (int i = 0; i < pref.getInt(MyConstants.COUNT_NUMBER, 1) - 71; i++) {
             lstLib.add(new Library(i));
         }
         myRecycle = view.findViewById(R.id.recycleViewTrains);
@@ -91,10 +93,14 @@ public class LibraryFragment extends Fragment {
                         break;
                     }
                 }
-                for (int i = 0; i < SaveToPrefMap.si.length;i++) {
-                    si[i]=false;
+                for (int i = 0; i < SaveToPrefMap.si.length; i++) {
+                    si[i] = false;
                 }
-                SaveToPrefMap.ID=find;
+                SaveToPrefMap.ID = find;
+                SharedPreferences.Editor edit = prfs.edit();
+                edit.putInt(MyConstants.Training_NUMBER, SaveToPrefMap.ID);
+                edit.apply();
+                Log.d("Ndnn", String.valueOf(prfs.getInt(MyConstants.Training_NUMBER, 4)));
 
             } else {
                 Toast.makeText(getContext(), "Choose ONLY one training ", Toast.LENGTH_SHORT).show();
