@@ -49,9 +49,14 @@ private MyDbManager myDbManager;
         left_tv.setText("Высота прыжка: "+"\n "+String.valueOf(prfs.getInt(MyConstants.JUMP_NUMBER,71))+" см");
         BarChart barChart = view.findViewById(R.id.barCharLeft);
         ArrayList<BarEntry> visitors = new ArrayList<>();
-        for (int i = 0; i < Obrabotchik.razdelJump(myDbManager.getFromDb(pref.getInt(MyConstants.Training_NUMBER,3)+1)).size(); i++) {
-            visitors.add(new BarEntry(i+1,Obrabotchik.razdelJump(myDbManager.getFromDb(pref.getInt(MyConstants.Training_NUMBER,3)+1)).get(i)));
+        if(prfs.getInt(MyConstants.JUMP_NUMBER,71)!=71){
+            for (int i = 0; i < Obrabotchik.razdelJump(myDbManager.getFromDb(pref.getInt(MyConstants.Training_NUMBER,3)+1)).size(); i++) {
+                visitors.add(new BarEntry(i+1,Obrabotchik.razdelJump(myDbManager.getFromDb(pref.getInt(MyConstants.Training_NUMBER,3)+1)).get(i)));
+            }
+        }else{
+            visitors.add(new BarEntry(1,71));
         }
+
         BarDataSet barDataSet= new BarDataSet(visitors,"Jumps");
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
         barDataSet.setValueTextSize(16f);

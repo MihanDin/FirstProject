@@ -50,9 +50,14 @@ public class RightFragment extends Fragment {
 
         BarChart barChart = view.findViewById(R.id.barCharRight);
         ArrayList<BarEntry> visitors = new ArrayList<>();
-        for (int i = 0; i < Obrabotchik.razdelJump(myDbManager.getFromDb(pref.getInt(MyConstants.Training_NUMBER, 3) + 1)).size(); i++) {
+        if(prfs.getInt(MyConstants.JUMP_NUMBER,71)!=71) {
 
-            visitors.add(new BarEntry(i + 1, (float) (Obrabotchik.razdelJump(myDbManager.getFromDb(pref.getInt(MyConstants.Training_NUMBER, 3) + 1)).get(i) * 0.01 * 75 * 10)));
+            for (int i = 0; i < Obrabotchik.razdelJump(myDbManager.getFromDb(pref.getInt(MyConstants.Training_NUMBER, 3) + 1)).size(); i++) {
+
+                visitors.add(new BarEntry(i + 1, (float) (Obrabotchik.razdelJump(myDbManager.getFromDb(pref.getInt(MyConstants.Training_NUMBER, 3) + 1)).get(i) * 0.01 * 75 * 10)));
+            }
+        }else{
+            visitors.add(new BarEntry(1, (float) 126.8));
         }
         BarDataSet barDataSet = new BarDataSet(visitors, "Jumps");
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);

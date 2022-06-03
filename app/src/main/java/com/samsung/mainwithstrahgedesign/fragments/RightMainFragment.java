@@ -49,13 +49,15 @@ public class RightMainFragment extends Fragment {
         right_main_tv.setText(" Сожжено: "+"\n "+formattedDouble+" кaлорий");
         Log.d("TEXTdeb",String.valueOf(pref.getInt(MyConstants.JUMP_NUMBER,71)));
 
-
-
         BarChart barChart = view.findViewById(R.id.barCharRightMain);
         ArrayList<BarEntry> visitors = new ArrayList<>();
-        for (int i = 0; i < Obrabotchik.razdelJump(myDbManager.getFromDb(pref.getInt(MyConstants.Training_NUMBER, 3) + 1)).size(); i++) {
+        if(prfs.getInt(MyConstants.JUMP_NUMBER,71)!=71) {
+            for (int i = 0; i < Obrabotchik.razdelJump(myDbManager.getFromDb(pref.getInt(MyConstants.Training_NUMBER, 3) + 1)).size(); i++) {
 
-            visitors.add(new BarEntry(i + 1, (float) (Obrabotchik.razdelJump(myDbManager.getFromDb(pref.getInt(MyConstants.Training_NUMBER, 3) + 1)).get(i) * 0.01 * 75 * 10/4.2)));
+                visitors.add(new BarEntry(i + 1, (float) (Obrabotchik.razdelJump(myDbManager.getFromDb(pref.getInt(MyConstants.Training_NUMBER, 3) + 1)).get(i) * 0.01 * 75 * 10 / 4.2)));
+            }
+        }else{
+            visitors.add(new BarEntry(1, 532.5F));
         }
         BarDataSet barDataSet = new BarDataSet(visitors, "Jumps");
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
